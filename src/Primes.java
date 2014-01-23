@@ -1,6 +1,7 @@
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 /**
  * @author Amalan Iyengar <amalan.iyengar@gmail.com>
  * @version 1.0
@@ -13,7 +14,7 @@ public class Primes {
 	 * @return 			Boolean, true if it is prime, false if it isn't 
 	 */
 	boolean isPrime(long number){
-		for(long i=0;i<Math.sqrt(number);i++){
+		for(long i=0;i<=Math.sqrt(number);i++){
 			if(number%i==0){
 				return false;
 			}
@@ -26,7 +27,7 @@ public class Primes {
 	 * @return 			Boolean, true if it is prime, false if it isn't 
 	 */
 	boolean isPrime(int number){
-		for(int i=0;i<Math.sqrt(number);i++){
+		for(int i=0;i<=Math.sqrt(number);i++){	
 			if(number%i==0){
 				return false;
 			}
@@ -46,7 +47,7 @@ public class Primes {
 	 * </ol>
 	 * @param max	The numbers you want to find primes up to
 	 * @return		An ArrayList finding all the primes up to the number specified
-	 */
+	 */	
 	ArrayList<Integer> sieve(int max){
 		Boolean[] primes=new Boolean[max];
 		Arrays.fill(primes, true);
@@ -64,5 +65,33 @@ public class Primes {
 
 		return primeslist;
 	}
+	/**
+	 * This program finds the prime factors of an integer iteratively (Recursively takes longer, at least the way I implemented it)
+	 * @param number	The number you want to factorize
+	 * @return 			ArrayList with the prime factors of the number
+	 */
+	ArrayList<Integer> primeFactors(int number){
+		ArrayList<Integer> factors=new ArrayList<Integer>();
+		while(number>1){
+			int factor=-1;
+			for(int i=2;i<=Math.sqrt(number);i++){
+				if(number%i==0){
+					factor=i;
+				}
+				
+			}			
+			if(factor==-1){
+				factors.add(number);
+				return factors;
+			}
+			factors.add(factor);
+			factors.add(number/factor);
+			number/=number;
+			number/=factor;
+		}
+		Collections.sort(factors);
+		return factors;
+	}
+	
 		
 }
