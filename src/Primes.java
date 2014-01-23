@@ -13,7 +13,7 @@ public class Primes {
 	 * @param number    number you want to perform a primality check on
 	 * @return 			Boolean, true if it is prime, false if it isn't 
 	 */
-	boolean isPrime(long number){
+	public boolean isPrime(long number){
 		for(long i=0;i<=Math.sqrt(number);i++){
 			if(number%i==0){
 				return false;
@@ -26,7 +26,7 @@ public class Primes {
 	 * @param number    number you want to perform a primality check on
 	 * @return 			Boolean, true if it is prime, false if it isn't 
 	 */
-	boolean isPrime(int number){
+	public boolean isPrime(int number){
 		for(int i=0;i<=Math.sqrt(number);i++){	
 			if(number%i==0){
 				return false;
@@ -48,7 +48,7 @@ public class Primes {
 	 * @param max	The numbers you want to find primes up to
 	 * @return		An ArrayList finding all the primes up to the number specified
 	 */	
-	ArrayList<Integer> sieve(int max){
+	public ArrayList<Integer> sieve(int max){
 		Boolean[] primes=new Boolean[max];
 		Arrays.fill(primes, true);
 		for(int x=2;x<Math.sqrt(max);x++){
@@ -70,7 +70,7 @@ public class Primes {
 	 * @param number	The number you want to factorize
 	 * @return 			ArrayList with the prime factors of the number
 	 */
-	ArrayList<Integer> primeFactors(int number){
+	public ArrayList<Integer> primeFactors(int number){
 		ArrayList<Integer> factors=new ArrayList<Integer>();
 		while(number>1){
 			int factor=-1;
