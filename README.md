@@ -21,3 +21,5 @@ This is the code repository, as well as the documentation, for our group Mathey 
 9. Now everyone in the group has the code for the entire group!
 
 If all else fails, we can just email our code to each other, or put it in <a href="http://pastebin.com/">Pastebin</a> or a similar site.
+
+With regards to documenting code in your methods apart from the API documentation, ideally, your code should be self-explanatory, and not require comments. A good rule of thumb is code should tell you the *how*, comments should tell you the *why*. A person reading your code should be able to tell what it does without any comments. That means using meaningful variable and method names.
