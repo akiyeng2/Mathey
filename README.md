@@ -25,7 +25,7 @@ If all else fails, we can just email our code to each other, or put it in <a hre
 ##Documentation
 
 We'll be writing documentation for the <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">Javadoc tool</a>. This way, we can just have a computer program run through our comments and generate an HTML page with all our documentation. Javadoc comments are usually written like this for Classes (from <a href="http://en.wikipedia.org/wiki/Javadoc">Wikipedia</a>)
-``java
+```java
 /**
  * @author      Firstname Lastname <address @ example.com>
  * @version     1.6                 (current version number of program)
