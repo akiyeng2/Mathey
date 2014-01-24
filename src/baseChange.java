@@ -1,4 +1,11 @@
 import java.lang.Math;
+/**
+ * This is a class used for converting strings and numbers from one base to another
+ * 
+ * @author Amalan Iyengar
+ * @version 1.1
+ * @since 2014-01-24
+ */
 public class baseChange {
 	private final int PAD_LEFT=0;
 	private final int PAD_RIGHT=1;
@@ -12,6 +19,21 @@ public class baseChange {
 		return new String(digits);
 	}
 	//Yes, I know this can be accomplished by a simple 2-line function, but the point is to learn, no?
+	/**
+	 * This method converts a number from one base to another
+	 * <p>
+	 * This does it by splitting the original number into an array of digits, and then finding the decimal representation of the number by raising each digit to a power. 
+	 * It then will convert it to the new base by taking repeated divisions and their remainders, until the number is less than one.
+	 * I know that there already exists a way to do this, with <code>toString(int i, int radix)</code>, and <code>parseInt(String s, int radix)</code>, but I wanted to do it using as few built-in functions as possible.
+	 * After it is done, it reverses the string, since the characters are appended back-to-front. 
+	 * </p>
+	 * 
+	 * @param num	The number, represented as a String, that you want to convert from one base to another
+	 * @param from	The base that the number is currently represented in. Must be between 2 and 36
+	 * @param to	The desired destination base. Must be between 2 and 36
+	 * @return		A string with the number in the desired destination base
+	 * @throws		IllegalArgumentException If the bases are not between 2 and 36, or if there is a number that is not represented in the base specified
+	 */
 	public String convert(String num, int from, int to){
 		if(from>36 || from<2){
 			throw new IllegalArgumentException("Starting base must be between 2 and 36");
@@ -47,6 +69,16 @@ public class baseChange {
 		
 		
 	}
+	/**
+	 * This program converts a string encoded in a specified base to a base 10 integer
+	 * <p>
+	 * This works in the exact same way that <code>conversion</code> works, except it converts it into an integer instead of a String.
+	 * </p>
+	 * 
+	 * @param num	The number, represented as a string, that you want to convert to base 10
+	 * @param from	The starting base
+	 * @return		The base 10 representation of the given number
+	 */
 	public int toBase10(String num, int from){
 		if(from>36 || from<2){
 			throw new IllegalArgumentException("Starting base must be between 2 and 36");
@@ -80,6 +112,17 @@ public class baseChange {
 		}
 		return str;
 	}
+	/**
+	 * This method encodes an ASCII string in a specified base
+	 * <p>
+	 * This works by splitting the string into its characters, then converting the characters into its ASCII integer, and then encoding that into a base.
+	 * It is then padded into the correct number of characters so it can be decoded. For example, each base 2 number will be exactly 8 characters long, with leading zeros
+	 * </p>
+	 * 
+	 * @param ASCII	The string in ASCII you want to convert
+	 * @param to	The destination base
+	 * @return		A string with a series of numbers that will decode to the ASCII string
+	 */
 	public String encodeASCII(String ASCII,int to){
 		char[] characters=ASCII.toCharArray();
 		String str="";
@@ -90,6 +133,19 @@ public class baseChange {
 
 		
 	}
+	/**
+	 * This method decodes an ASCII string given a specified base that it was encoded in
+	 * <p>
+	 * Since we know the base, we will just split the string into strings of whatever length it was calculated with. We get this by performing the operation
+	 * <code>floor(log(128)/log(base)+1)</code><br>
+	 * Since all the ASCII characters used here are under 128, which is 2^7, each base 2 string will be 8 characters long at max, so we make all of the base 2 strings 8 characters long
+	 * so that we can split them. 
+	 * 
+	 * </p>
+	 * @param numbers
+	 * @param from
+	 * @return An ASCII string with the encoded message
+	 */
 	public String decodeASCII(String numbers, int from){
 		int length=(int)Math.floor(Math.log(128)/Math.log(from)+1);
 		String result="";

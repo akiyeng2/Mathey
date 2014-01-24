@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 /**
+ * This is a class that contains a collection of methods used in prime numbers
+ * 
  * @author Amalan Iyengar <amalan.iyengar@gmail.com>
  * @version 1.0
  * @since 2014-01-23
