@@ -21,3 +21,18 @@ This is the code repository, as well as the documentation, for our group Mathey 
 9. Now everyone in the group has the code for the entire group!
 
 If all else fails, we can just email our code to each other, or put it in <a href="http://pastebin.com/">Pastebin</a> or a similar site.
+
+##Documentation
+
+We'll be writing documentation for the <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-137868.html">Javadoc tool</a>. This way, we can just have a computer program run through our comments and generate an HTML page with all our documentation. Javadoc comments are usually written like this for Classes (from <a href="http://en.wikipedia.org/wiki/Javadoc">Wikipedia</a>)
+```java
+/**
+ * @author      Firstname Lastname <address @ example.com>
+ * @version     1.6                 (current version number of program)
+ * @since       2010-03-31          (the version of the package this class was first added to)
+ */
+public class Test {
+    // class body
+}
+```
+Note the double asterisk (`**`) at the beginning of the comment. This is a signal to the program that this comment should be taken as documentation. I've documented one of my classes so far, the Primes class. Take a look there for examples on how to document a method. The HTML documentation is located in the `doc/` folder.
