@@ -1,3 +1,4 @@
+
 import java.lang.Math;
 /**
  * This is a class used for converting strings and numbers from one base to another
