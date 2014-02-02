@@ -7,6 +7,8 @@ import java.lang.Math;
  * @version 1.1
  * @since 2014-01-24
  */
+
+//A constructor is kind of useless for this, since you'll  be changing different numbers each time
 public class baseChange {
 	private final int PAD_LEFT=0;
 	private final int PAD_RIGHT=1;
@@ -102,7 +104,7 @@ public class baseChange {
 		if(type==PAD_RIGHT){
 			while(str.length()<length){
 				str+=paddingChar;
-			}
+			}		
 
 		}else if(type==PAD_LEFT){
 			String newStr="";

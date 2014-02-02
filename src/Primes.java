@@ -16,7 +16,7 @@ public class Primes {
 	 * @return 			Boolean, true if it is prime, false if it isn't 
 	 */
 	public boolean isPrime(long number){
-		for(long i=0;i<=Math.sqrt(number);i++){
+		for(long i=2;i<=Math.sqrt(number);i++){
 			if(number%i==0){
 				return false;
 			}
@@ -29,7 +29,7 @@ public class Primes {
 	 * @return 			Boolean, true if it is prime, false if it isn't 
 	 */
 	public boolean isPrime(int number){
-		for(int i=0;i<=Math.sqrt(number);i++){	
+		for(int i=2;i<=Math.sqrt(number);i++){	
 			if(number%i==0){
 				return false;
 			}
