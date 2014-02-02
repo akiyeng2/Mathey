@@ -1,7 +1,11 @@
 #Group 5 Mathey Project 
 
 ###Group Members
-* Amalan Iyengar 
+* Jordan Cho
+* Devin Williams
+* Lauren Koval
+* Amalan Iyengar
+
 
 This is the code repository, as well as the documentation, for our group Mathey Project. All code will be committed to this repository. The advantage to using this is that we can have all of our code in one centralized location, and if something messes up, we have all of the previous versions to go back and look through, and if someone loses their code, we will all have it here. It will also allow us to see what people are doing
 <hr/>
