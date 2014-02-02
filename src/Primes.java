@@ -74,26 +74,14 @@ public class Primes {
 	 */
 	public ArrayList<Integer> primeFactors(int number){
 		ArrayList<Integer> factors=new ArrayList<Integer>();
-		while(number>1){
-			int factor=-1;
-			for(int i=2;i<=Math.sqrt(number);i++){
-				if(number%i==0){
-					factor=i;
-				}
-				
-			}			
-			if(factor==-1){
-				factors.add(number);
-				return factors;
+		for(int i=2;i<=number;i++){
+			while(number%i==0){
+				factors.add(i);
+				number=number/i;
 			}
-			factors.add(factor);
-			factors.add(number/factor);
-			number/=number;
-			number/=factor;
 		}
 		Collections.sort(factors);
 		return factors;
 	}
-	
-		
+
 }
